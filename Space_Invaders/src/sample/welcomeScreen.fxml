@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="AP" prefHeight="600" prefWidth="450" stylesheets="@styles/WelcomeScreenStyle.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.WelcomeController">
+    <VBox alignment="CENTER" layoutX="87.0" layoutY="250.0" spacing="30" stylesheets="@styles/WelcomeScreenStyle.css">
+        <Button fx:id="startButton" onAction="#handleStartButtonAction" stylesheets="@styles/WelcomeScreenStyle.css" text="START" />
+        <Button fx:id="instructionButton" onAction="#handleInstructionButtonAction" stylesheets="@styles/WelcomeScreenStyle.css" text="INSTRUCTION" />
+        <Button fx:id="exitButton" onAction="#handleExitButtonAction" stylesheets="@styles/WelcomeScreenStyle.css" text="EXIT" />
+    </VBox>
+   <Pane id="titlePane" layoutX="38.0" layoutY="14.0" prefHeight="200.0" prefWidth="374.0" stylesheets="@styles/WelcomeScreenStyle.css" />
+
+</AnchorPane>
