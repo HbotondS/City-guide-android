@@ -78,7 +78,6 @@ public abstract class XMLWorker {
 			TransformerFactory tf = TransformerFactory.newInstance();
 			Transformer transformer = tf.newTransformer();
 			DOMSource source = new DOMSource(doc);
-			System.out.println(filename);
 			StreamResult result = new StreamResult(filename);
 
 			transformer.transform(source, result);

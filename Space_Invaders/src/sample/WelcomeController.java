@@ -6,14 +6,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class WelcomeController {
 
-	public void handleStartButtonAction(ActionEvent actionEvent) throws IOException {
+	public void handleStartButtonAction(ActionEvent actionEvent) {
 		Pane root = new Pane();
 		Scene scene = new Scene( root );
 

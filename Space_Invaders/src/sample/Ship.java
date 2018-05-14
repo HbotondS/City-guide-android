@@ -24,7 +24,7 @@ public class Ship extends MovingGameObject implements checker, canShoot {
 	}
 
 	private void initPlayerShoot() {
-		bullet = new MovingGameObject("myRes/images/ship_shot.png");
+		bullet = new MovingGameObject("images/ship_shot.png");
 		bullet.setSpeed(10);
 	}
 
@@ -43,7 +43,7 @@ public class Ship extends MovingGameObject implements checker, canShoot {
 		initShootSound();
 		initExplosionSound();
 
-		destroyedImage = new GameObject("myRes/images/playerDestroyedImage.png", 50, 50);
+		destroyedImage = new GameObject("images/playerDestroyedImage.png", 50, 50);
 
 		setPosition((Game.WIDTH - getWidth())/2, Game.HEIGHT-getHeight() + 5);
 		setSpeed(200);

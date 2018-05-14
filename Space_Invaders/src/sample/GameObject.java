@@ -6,8 +6,6 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import sample.interfaces.renderable;
 
-import java.io.FileNotFoundException;
-
 public class GameObject implements renderable {
 	protected Image image;
 	protected Point2D position;

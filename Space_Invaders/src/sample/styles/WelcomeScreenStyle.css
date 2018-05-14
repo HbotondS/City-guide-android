@@ -10,18 +10,6 @@
     -fx-background-size: 100% 100%;
 }
 
-#gameAP {
-    -fx-background-image: url("../../myRes/images/gameWallpaper.jpg");
-    -fx-background-repeat: no-repeat;
-    -fx-background-size: 100% 100%;
-}
-
-#Game {
-    -fx-background-image: url("../../myRes/images/gameWallpaper.jpg");
-    -fx-background-repeat: no-repeat;
-    -fx-background-size: 100% 100%;
-}
-
 @font-face {
     font-family: 'ArcadeClassic';
     src: url('../../myRes/arcadeclassic.TTF');

@@ -123,18 +123,22 @@ public class Game extends Canvas {
 	}
 
 	private void gameOver() {
-		ArrayList<Score> scores = XMLWorker.read(getClass().getClassLoader().getResource("sample/scores.xml").toString());
-		System.out.println(scores.get(0));
-		Text gameOverText = initgoText();
-		Text newHighScoreText = inithsText();
+		ArrayList<Score> scores = XMLWorker.read(getClass().getClassLoader().getResource("scores.xml").toString());
+		Text gameOverText = initGameOverText();
+		Text newHighScoreText = initHighScoreText();
 		Button saveBtn = initSaveBtn(scores);
 		Button cancelBtn = initCancelBtn();
-		if (score > scores.get(0).getValue()) {
-			root.getChildren().add(newHighScoreText);
-			transition(newHighScoreText);
-		} else {
+		if (scores.isEmpty()) {
 			root.getChildren().add(gameOverText);
 			transition(gameOverText);
+		} else {
+			if (score > scores.get(0).getValue()) {
+				root.getChildren().add(newHighScoreText);
+				transition(newHighScoreText);
+			} else {
+				root.getChildren().add(gameOverText);
+				transition(gameOverText);
+			}
 		}
 
 		root.getChildren().addAll(saveBtn, cancelBtn);
@@ -143,14 +147,14 @@ public class Game extends Canvas {
 		renderScore(WIDTH/2 - 65, HEIGHT/2 + 20);
 	}
 
-	private Text initgoText() {
+	private Text initGameOverText() {
 		Text text = new Text(WIDTH/2 - 100, HEIGHT/2, "Game Over!");
 		text.setFont(Font.font("ArcadeClassic", 40));
 
 		return text;
 	}
 
-	private Text inithsText() {
+	private Text initHighScoreText() {
 		Text text = new Text(WIDTH/2 - 135, HEIGHT/2, "New High Score!");
 		text.setFont(Font.font("ArcadeClassic", 40));
 

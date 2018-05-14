@@ -42,7 +42,7 @@ public class Fleet implements checker, moveable, renderable, canShoot {
 		return canAttack;
 	}
 
-	private void initInvaderShoot() {
+	private void initInvaderBullets() {
 		bullets = new ArrayList<>();
 		for (int i = 0; i < 3; ++i) {
 			MovingGameObject temp = new MovingGameObject("images/alien_shot.png");
@@ -58,20 +58,13 @@ public class Fleet implements checker, moveable, renderable, canShoot {
 		bulletDestroyedSound.setVolume(0.15);
 	}
 
-	private void initInvaderDieSound() {
+	private void initInvaderDestroyedSound() {
 		invaderDieSound = new AudioClip(getClass().getClassLoader().getResource("sounds/invaderkilled.mp3").toString());
 		invaderDieSound.setVolume(0.15);
 	}
 
-	private void init(String filename) {
+	private void initInvaders(String filename) {
 		invaders = new ArrayList<>();
-		destroyedImage = new MovingGameObject("images/destroyed.png");
-
-		initInvaderDieSound();
-		initBulletDestroyedSound();
-
-		initInvaderShoot();
-
 		for (int i = 0; i < 10; ++i) {
 			for (int j = 0; j < 4; ++j) {
 				MovingGameObject temp = new MovingGameObject(filename, 30, 30);
@@ -85,9 +78,19 @@ public class Fleet implements checker, moveable, renderable, canShoot {
 		}
 	}
 
-	public boolean intersect(MovingGameObject bullet, GraphicsContext gc) {
-		boolean result = false;
-		for (MovingGameObject invader: invaders) {
+	private void init(String filename) {
+		destroyedImage = new MovingGameObject("images/destroyed.png");
+
+		initInvaderDestroyedSound();
+		initBulletDestroyedSound();
+
+		initInvaderBullets();
+
+		initInvaders(filename);
+	}
+
+	public boolean intersectWithInvader(MovingGameObject bullet, GraphicsContext gc) {
+		for (MovingGameObject invader : invaders) {
 			if (invader.intersects(bullet) && invader.isAlive() && bullet.isAlive()) {
 				invader.die();
 				bullet.die();
@@ -98,19 +101,27 @@ public class Fleet implements checker, moveable, renderable, canShoot {
 
 				invaderDieSound.play();
 
-				result = true;
-				break;
+				return true;
 			}
 		}
+		return false;
+	}
 
-		for (MovingGameObject v: bullets) {
+	public void intersectWithBullet(MovingGameObject bullet, GraphicsContext gc) {
+		for (MovingGameObject v : bullets) {
 			if (v.intersects(bullet) && v.isAlive() && bullet.isAlive()) {
 				v.die();
 				bullet.die();
 				bulletDestroyedSound.play();
-				break;
+				return;
 			}
 		}
+	}
+
+	public boolean intersect(MovingGameObject bullet, GraphicsContext gc) {
+		boolean result = intersectWithInvader(bullet, gc);
+
+		intersectWithBullet(bullet, gc);
 
 		if (result) {
 			canAttack = true;
@@ -140,40 +151,33 @@ public class Fleet implements checker, moveable, renderable, canShoot {
 	}
 
 	public boolean isDestroyed() {
-		boolean result = true;
-		for (MovingGameObject v: invaders) {
-			if (v.isAlive()) {
-				result = false;
-			}
-		}
-
-		return result;
+		return invaders.isEmpty();
 	}
 
 	@Override
 	public void render(GraphicsContext gc) {
-		for (MovingGameObject v: invaders) {
+		for (MovingGameObject v : invaders) {
 			v.render(gc);
 		}
 
-		for (MovingGameObject v: bullets) {
+		for (MovingGameObject v : bullets) {
 			v.render(gc);
 		}
 	}
 
 	@Override
 	public void check() {
-		for (MovingGameObject invader: invaders) {
+		for (MovingGameObject invader : invaders) {
 			if (invader.getPositionX() > Game.WIDTH - invader.getWidth() &&
 					invader.isMovingRight()) {
-				for (MovingGameObject v: invaders) {
+				for (MovingGameObject v : invaders) {
 					v.setMovingLeft(true);
 				}
 				break;
 			} else {
 				if (invader.getPositionX() < 0 &&
 						invader.isMovingLeft()) {
-					for (MovingGameObject v: invaders) {
+					for (MovingGameObject v : invaders) {
 						v.setMovingRight(true);
 					}
 					break;
@@ -191,22 +195,22 @@ public class Fleet implements checker, moveable, renderable, canShoot {
 
 	@Override
 	public void update() {
-		for (MovingGameObject v: invaders) {
+		for (MovingGameObject v : invaders) {
 			v.update();
 		}
 
-		for (MovingGameObject v: bullets) {
+		for (MovingGameObject v : bullets) {
 			v.update();
 		}
 	}
 
 	@Override
 	public void update(double time) {
-		for (MovingGameObject v: invaders) {
+		for (MovingGameObject v : invaders) {
 			v.update(time);
 		}
 
-		for (MovingGameObject v: bullets) {
+		for (MovingGameObject v : bullets) {
 			v.update();
 		}
 	}
