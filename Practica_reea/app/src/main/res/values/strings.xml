@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Targu Mures city guide</string>
+    <string name="welcomeString">Welcome</string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="bus_number">
+        <item>26</item>
+        <item>27</item>
+        <item>44</item>
+    </string-array>
+    <string-array name="bus_start_end">
+        <item>Sapientia - Aleea Carpati</item>
+        <item>Sapientia - Spitalul Judetean</item>
+        <item>Sapientia - Combinat</item>
+        <item>Sapientia - Combinat</item>
+    </string-array>
+
+    <string-array name="taxi_name">
+        <item>Taxi Pluto</item>
+        <item>Taxi Royal</item>
+        <item>Taxi Viva</item>
+    </string-array>
+
+    <string-array name="attraction_name">
+        <item>Palace of Culture</item>
+        <item>Zoo</item>
+        <item>Targu Mures Fortress</item>
+        <item>The Teleki-Bolyai Library</item>
+        <item>Complexul Weekend</item>
+    </string-array>
+
+    <string-array name="museum_name">
+        <item>Muzeul de Istorie și Arheologie</item>
+        <item>Atelierul și Muzeul Petry</item>
+        <item>Casa memoriala Avram Iancu</item>
+        <item>Muzeul de Științele Naturii</item>
+        <item>Muzeul de Etnografie și Artă Populară</item>
+        <item>Muzeul Evreiesc</item>
+        <item>Muzeul Bolyai</item>
+    </string-array>
+</resources>
