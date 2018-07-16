@@ -71,6 +71,26 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     startMyActivity("Museums", museum);
                     break;
                 }
+                case "Restaurants" : {
+                    startMyActivity("Restaurants", restaruant);
+                    break;
+                }
+                case "Hotels" : {
+                    startMyActivity("Hotels", hotel);
+                    break;
+                }
+                case "Shops" : {
+                    startMyActivity("Shops", fashion_shop);
+                    break;
+                }
+                case "Gyms" : {
+                    startMyActivity("Gyms", gym);
+                    break;
+                }
+                case "Movies" : {
+                    startMyActivity("Movies", movie);
+                    break;
+                }
                 default: {
                     Log.i("Button pressed", text);
                     Toast.makeText(mContext, "Clicked at button " + text, Toast.LENGTH_SHORT).show();

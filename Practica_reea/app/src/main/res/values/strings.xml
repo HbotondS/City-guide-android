@@ -39,4 +39,47 @@
         <item>Muzeul Evreiesc</item>
         <item>Muzeul Bolyai</item>
     </string-array>
+
+    <string-array name="restaurant_name">
+        <item>Rosen Garden</item>
+        <item>Restaurant Studio</item>
+        <item>"Butcher's Kitchen Bistro"</item>
+        <item>Tempo-Laci Csarda</item>
+        <item>Casa Mureșană</item>
+    </string-array>
+
+    <string-array name="hotel_name">
+        <item>Grand Hotel</item>
+        <item>Continental Hotel</item>
+        <item>Arena Hotel</item>
+        <item>Business Conference Hotel</item>
+        <item>Concordia Hotel</item>
+        <item>Plaza Hotel</item>
+    </string-array>
+
+    <string-array name="shop_name">
+        <item>Deichmann</item>
+        <item>Wine Shop</item>
+        <item>Kaufland</item>
+        <item>Selgros</item>
+        <item>Decathlon</item>
+        <item>Media Galaxy</item>
+        <item>Pepco</item>
+        <item>H&amp;M</item>
+        <item>New Yorker</item>
+        <item>Dedeman</item>
+        <item>Auchan</item>
+    </string-array>
+
+    <string-array name="gym_name">
+        <item>Gold Gym</item>
+        <item>AGORA Fitness Center</item>
+        <item>Body Factory</item>
+        <item>18 Gym</item>
+    </string-array>
+
+    <string-array name="movie_name">
+        <item>Cinema City</item>
+        <item>Cinema Arta</item>
+    </string-array>
 </resources>

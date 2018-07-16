@@ -56,6 +56,26 @@ public class ItemsActivity extends AppCompatActivity {
                 setAttr(museum_name);
                 break;
             }
+            case "Restaurants" : {
+                setAttr(restaurant_name);
+                break;
+            }
+            case "Hotels" : {
+                setAttr(hotel_name);
+                break;
+            }
+            case "Shops" : {
+                setAttr(shop_name);
+                break;
+            }
+            case "Gyms" : {
+                setAttr(gym_name);
+                break;
+            }
+            case "Movies" : {
+                setAttr(movie_name);
+                break;
+            }
         }
 
         BtnAdapter bba = new BtnAdapter(this, index_image, name, description);
