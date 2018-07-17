@@ -72,8 +72,12 @@ public class ItemsActivity extends AppCompatActivity {
                 setAttr(gym_name);
                 break;
             }
-            case "Movies" : {
-                setAttr(movie_name);
+            case "Movies&Theatres" : {
+                setAttr(movie_and_theatre_name);
+                break;
+            }
+            case "Clubs" : {
+                setAttr(club_name);
                 break;
             }
         }

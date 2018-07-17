@@ -80,15 +80,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     break;
                 }
                 case "Shops" : {
-                    startMyActivity("Shops", fashion_shop);
+                    startMyActivity("Shops", shop);
                     break;
                 }
                 case "Gyms" : {
                     startMyActivity("Gyms", gym);
                     break;
                 }
-                case "Movies" : {
-                    startMyActivity("Movies", movie);
+                case "Movies&Theatres" : {
+                    startMyActivity("Movies&Theatres", movie);
+                    break;
+                }
+                case "Clubs" : {
+                    startMyActivity("Clubs", party);
                     break;
                 }
                 default: {

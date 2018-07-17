@@ -41,11 +41,9 @@ public class Recyclerview extends AppCompatActivity {
         lstButton.add(new Button("Museums", R.drawable.museum));
         lstButton.add(new Button("Restaurants", R.drawable.restaruant));
         lstButton.add(new Button("Hotels", R.drawable.hotel));
-        lstButton.add(new Button("Shops", R.drawable.fashion_shop));
+        lstButton.add(new Button("Shops", R.drawable.shop));
         lstButton.add(new Button("Gyms", R.drawable.gym));
-        lstButton.add(new Button("Movies", R.drawable.movie));
-        lstButton.add(new Button("Theatres", R.drawable.theatre));
+        lstButton.add(new Button("Movies&Theatres", R.drawable.movie));
         lstButton.add(new Button("Clubs", R.drawable.party));
-        lstButton.add(new Button("Pubs", R.drawable.pub));
     }
 }

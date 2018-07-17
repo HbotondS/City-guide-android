@@ -78,8 +78,21 @@
         <item>18 Gym</item>
     </string-array>
 
-    <string-array name="movie_name">
+    <string-array name="movie_and_theatre_name">
         <item>Cinema City</item>
         <item>Cinema Arta</item>
+        <item>Spectrum theatre</item>
+        <item>Studio theatre</item>
+        <item>Maros Művészegyüttes theatre</item>
+        <item>National Tîrgu-Mureş theatre</item>
+        <item>Yorick theatre</item>
+    </string-array>
+
+    <string-array name="club_name">
+        <item>Jazz&amp;Blues</item>
+        <item>Astoria Club</item>
+        <item>Cuba Ground</item>
+        <item>XXL Club</item>
+        <item>Babylon</item>
     </string-array>
 </resources>
