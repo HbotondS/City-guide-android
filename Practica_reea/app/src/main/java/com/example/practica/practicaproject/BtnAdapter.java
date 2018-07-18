@@ -1,11 +1,13 @@
 package com.example.practica.practicaproject;
 
 import android.content.Context;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class BtnAdapter extends BaseAdapter{
@@ -23,6 +25,9 @@ public class BtnAdapter extends BaseAdapter{
 
     @Override
     public int getCount() {
+        if (name == null) {
+            return description.length;
+        }
         return name.length;
     }
 
@@ -43,11 +48,23 @@ public class BtnAdapter extends BaseAdapter{
         TextView indexNumber = v.findViewById(R.id.item_indexNumber);
         TextView name = v.findViewById(R.id.item_name);
 
-        String number = this.name[i];
-        String route = description[i];
+        if (this.name == null) {
+            indexNumber.setText("");
+            RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) name.getLayoutParams();
+
+            int sizeInDP = 70;
+            int marginInDP = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, sizeInDP, v.getResources().getDisplayMetrics());
+
+            lp.setMarginStart(marginInDP);
+            name.setLayoutParams(lp);
+        } else {
+            String number = this.name[i];
+            indexNumber.setText(number);
+        }
 
         indexImg.setImageResource(index_image);
-        indexNumber.setText(number);
+
+        String route = description[i];
         name.setText(route);
 
         return v;

@@ -1,17 +1,16 @@
 package com.example.practica.practicaproject;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
+import android.util.Log;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import static com.example.practica.practicaproject.R.array.*;
 
 public class ItemsActivity extends AppCompatActivity {
-
-    private ImageView indexImg;
 
     private String[] name = new String[]{""};
     private String[] description  = new String[]{""};
@@ -22,8 +21,8 @@ public class ItemsActivity extends AppCompatActivity {
     }
 
     private void setAttr(int name) {
-        this.name = getResources().getStringArray(name);
-        this.description = new String[this.name.length];
+        this.description = getResources().getStringArray(name);
+        this.name = null;
     }
 
     @Override
@@ -33,15 +32,18 @@ public class ItemsActivity extends AppCompatActivity {
 
         ListView items = findViewById(R.id.items);
 
-        indexImg = this.findViewById(R.id.indexImg);
-
         Intent intent = getIntent();
         int index_image = intent.getExtras().getInt(RecyclerViewAdapter.INDEX_IMAGE);
         String value = intent.getStringExtra(RecyclerViewAdapter.MESSAGE);
 
         switch (value) {
             case "Bus" : {
-                setAttr(bus_number, bus_start_end);
+                BusHolder busHolder = new BusHolder(getResources().getStringArray(bus_number),
+                        getResources().getStringArray(bus_start_end),
+                        getResources().getStringArray(bus_description));
+
+                name = busHolder.getBusNumbers();
+                description = busHolder.getBusStartEnds();
                 break;
             }
             case "Taxi" : {
@@ -84,5 +86,13 @@ public class ItemsActivity extends AppCompatActivity {
 
         BtnAdapter bba = new BtnAdapter(this, index_image, name, description);
         items.setAdapter(bba);
+
+        items.setOnItemClickListener((parent, view, position, id) -> {
+//            TextView textView = view.findViewById(R.id.item_indexNumber);
+//            Log.d("TAG", textView.getText().toString());
+            Log.d("TAG", name[position]);
+            Log.d("TAG", "Position: " + position);
+            Log.d("TAG", "id: " + id);
+        });
     }
 }

@@ -13,7 +13,29 @@
         <item>Sapientia - Aleea Carpati</item>
         <item>Sapientia - Spitalul Judetean</item>
         <item>Sapientia - Combinat</item>
-        <item>Sapientia - Combinat</item>
+    </string-array>
+    <string-array name = "bus_description">
+        <item>Sapientia –Regele Ferdinand – Solidaritatea – Piaţa Diamant – Înfrăţirii – Fortuna – Lalelelor – Izvor – P-ţa Trandafirilor – Evidenţa Populaţiei – Cocoşul De Aur – Aleea Carpaţi – Ştrandul 1 Mai – Aleea Carpaţi – Darina – Electrica – Eroilor Martirii – P-ţa Teatrului – Poli 2 – Europa – Buşteni – Poclos – Tudor Vladimirescu – Piaţa Diamant – Corina 2 – Sapientia
+
+Plecări Sapientia – zile lucrătoare
+
+05:20 05:50 06:20 06:50 07:20 07:55 08:30   09:05 09:40 10:15 10:50 11:25 12:00 12:35 13:10 13:45 14:20 14:55 15:30   16:05 16:40 17:15 17:50 18:25 19:00 19:35 20:10 20:45 21:20 22:10
+
+Plecări Sapientia – zile nelucrătoare
+
+05:30 06:30 07:30 08:30 09:30 10:30   11:30 12:30 13:30 14:30 15:30 16:30 17:30 18:30 19:30 20:30 21:30
+
+
+
+Plecări Aleea Carpați – zile lucrătoare
+
+05:20 05:50 06:20 06:50 07:20 07:55 08:30   09:05 09:40 10:15 10:50 11:25 12:00 12:35 13:10 13:45 14:20 14:55 15:30   16:05 16:40 17:15 17:50 18:25 19:00 19:35 20:10 20:45 21:20 22:10
+
+Plecări Aleea Carpați – zile nelucrătoare
+
+05:10 06:00 07:00 08:00 09:00 10:00   11:00 12:00 13:00 14:00 15:00 16:00 17:00 18:00 19:00 20:00 21:00 22:10</item>
+        <item></item>
+        <item></item>
     </string-array>
 
     <string-array name="taxi_name">
