@@ -9,4 +9,4 @@ Further update may be coming, because the softwer is not finished and i have a l
 ## License and copyright
 © Botond Sámuel Hegyi
 
-Licensed under the [MIT license](LICENSE).
+Licensed under the [GPL v3.0 license](LICENSE).
