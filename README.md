@@ -1,7 +1,8 @@
 
 # City guide android
 ![](https://img.shields.io/badge/updated-july-yellow.svg)
-[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) <br/>
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) 
+![](https://img.shields.io/badge/platform-android-brightgreen.svg) <br/>
 *Read this in other languages: [English](README.md), [Hungarian](README.hu.md)* <br/>
 
 ## Introduction 
